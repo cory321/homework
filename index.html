@@ -13,8 +13,8 @@
 	    <script src="app.js"></script>
 	</head>
 
-	<body class="container-fluid">
-		<header class="row">
+	<body>
+		<header class="container-fluid">
 			<div class="row border-bottom">
 				<div class="col-md-3">
 					<img src="assets/logo.png" alt="Urban Yoga" class="logo"></img>
@@ -33,8 +33,8 @@
 					</nav>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
+			<div class="row row-centered navBG">
+				<div class="col-md-8 col-centered">
 					<nav id="secondaryNav">
 						<ul>
 							<li><a href="#">Dashboard</a></li>
@@ -47,34 +47,38 @@
 			</div>
 		</header>
 
-
-		<aside>
-			<button id="newProgramBtn" class="btn btn-success"><span class="glyphicon glyphicon-plus grow" aria-hidden="true"></span></button>
-		</aside>
-
 		<section class="container">
 			<div class="row">
-				<div class="col-md-4">
-					<h1>Yoga Classes</h1>
-					<!-- Sales Graph -->
-					<!-- Sales Data -->
-					<a href="#">more</a>
+				<div class="col-md-2">
+					<button id="newProgramBtn" class="btn btn-success"><span class="glyphicon glyphicon-plus grow" aria-hidden="true"></span>New Program</button>
 				</div>
-				<div class="col-md-4">
-					<h1>Yoga Privates</h1>
-					<!-- Sales Graph -->
-					<!-- Sales Data -->
-					<a href="#">more</a>
+				<div class="col-md-3">
+					<div class="card">
+						<h1>Yoga Classes</h1>
+						<!-- Sales Graph -->
+						<!-- Sales Data -->
+						<a href="#">more</a>
+					</div>
 				</div>
-				<div class="col-md-4">
-					<h1>Yoga Duets</h1>
-					<!-- Sales Graph -->
-					<!-- Sales Data -->
-					<a href="#">more</a>
+				<div class="col-md-3">
+					<div class="card">
+						<h1>Yoga Privates</h1>
+						<!-- Sales Graph -->
+						<!-- Sales Data -->
+						<a href="#">more</a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card">
+						<h1>Yoga Duets</h1>
+						<!-- Sales Graph -->
+						<!-- Sales Data -->
+						<a href="#">more</a>
+					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-offset-2">
 					<table class="table">
 						<thead>
 							<tr>
