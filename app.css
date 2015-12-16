@@ -1,0 +1,106 @@
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {  
+	#primaryNav {
+			margin-top:0px;
+		}
+}
+
+header {
+	background: #F1FAF5;
+}
+
+body {
+	background: #F4F4EE;
+}
+
+span.logo {
+	padding: 10px;
+	background: url("assets/logo.png") 0 0;
+}
+
+nav ul li {
+	display: inline;
+}
+
+.border-bottom {
+	border-bottom:1px solid #c0d8cd;
+}
+
+#primaryNav:before {
+	content: "";
+	display: block;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: #F1FAF5;
+	border:0;
+	width:50px;
+}
+
+#primaryNav {
+	background: #FFF; 
+	background: -webkit-linear-gradient(#fff 0%, #eef3f1 100%);
+	background: -o-linear-gradient(#fff 0%, #eef3f1 100%);
+	background: linear-gradient(#fff 0%, #eef3f1 100%);
+	border-top:1px solid #c9eada;
+	margin:0;
+	padding:0;
+	height: 40px;
+	margin-top:40px;
+}
+
+#primaryNav a {
+	color: #88A596;
+	display: inline-block;
+	padding: 4px 15px;
+	border-left:1px solid #DDD;
+}
+
+#primaryNav ul, #secondaryNav ul {
+	margin:0;
+}
+
+#primaryNav li.selected a {
+	background: #FFF;
+    color: #444;
+    font-weight: bold;
+    height: 50px;
+    border: 1px solid #999;
+    box-shadow: 0px 0px 4px #999;
+    line-height: 2.2em;
+    border-radius: 5px 5px 0 0;
+    top: -6px;
+    position: relative;
+}
+
+#primaryNav li.selected + li a {
+	border-left: 0;
+}
+
+#secondaryNav {
+	background: #FFF;
+	padding: 10px 0;
+	margin:0;
+	border-bottom: 1px solid #ccccbb;
+}
+
+#secondaryNav a {
+	color: #8f8f8f;
+	padding: 0 10px;
+}
+
+#secondaryNav li.selected {
+	font-weight: bold;
+}
+
+#newProgramBtn {
+	display: block;
+	width: 100px;
+	height: 100px;
+	font-size: 3em;
+	color: #FFF;
+}
+
+
