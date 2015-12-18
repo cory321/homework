@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="urbanYogaApp">
 
 	<head>
 	    <meta charset="utf-8">
@@ -47,30 +47,14 @@
 			</div>
 		</header>
 
-		<section class="container">
+		<section class="container" ng-controller="programsCtrl">
 			<div class="row">
 				<div class="col-md-2">
 					<button id="newProgramBtn" class="btn btn-success"><span class="glyphicon glyphicon-plus grow" aria-hidden="true"></span>New Program</button>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3" ng-repeat="program in programs">
 					<div class="card">
-						<h1>Yoga Classes</h1>
-						<!-- Sales Graph -->
-						<!-- Sales Data -->
-						<a href="#">more</a>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="card">
-						<h1>Yoga Privates</h1>
-						<!-- Sales Graph -->
-						<!-- Sales Data -->
-						<a href="#">more</a>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="card">
-						<h1>Yoga Duets</h1>
+						<h1>{{program.Name}}</h1>
 						<!-- Sales Graph -->
 						<!-- Sales Data -->
 						<a href="#">more</a>

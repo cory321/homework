@@ -134,8 +134,10 @@ nav ul li {
 
 .card {
 	background-color: #FFF;
-	padding: 20px;
-	border-radius:10px;}
+	border-radius:6px;
+	border: 1px solid #DDD;
+	margin: 5px 0;
+	padding: 10px;}
 
 .card h1 {
 	font-size:1.5em;
