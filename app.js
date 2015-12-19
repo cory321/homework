@@ -38,43 +38,61 @@
 			restrict: 'EA',
 			scope: {},
 			link: function(scope, ele, attrs){
-				scope.data = [1, 2, 3, 4, 5];
 
 				d3Service.d3().then(function(d3) {
-					var margin = parseInt(attrs.margin) || 20,
-					          barHeight = parseInt(attrs.barHeight) || 20;
+					var month = attrs.month || "Month",
+						 previousYear = parseInt(attrs.previousyear) || 10,
+					    currentYear = attrs.currentyear || 10;
+					    console.log(attrs);
 
-					var height = 80;
+				// scope.data = [previousYear, currentYear];
 
-					var y = d3.scale.linear()
-					    .domain([0, d3.max(scope.data)])
-					    .range([0, height]);
+					// var height = 80;
 
-					var svg = d3.select(ele[0])
+					// var y = d3.scale.linear()
+					//     .domain([0, d3.max(scope.data)])
+					//     .range([0, height]);
+
+					var svgCanvas = d3.select(ele[0])
 					  				.append('svg')
-					            .style('width', '100%')
-					            .style('height', '200');
+					            .style('width', '50')
+					            .style('height', '100');
 
-	            svg.append("text")
-	            .text("Jan Feb Mar Apr May Jun Jul")
-	            .attr("y", 100)
+	            svgCanvas.append("text")
+	            .text(month)
+	            .attr("x", 25)
+	            .attr("y", 25)
 	            .attr("font-family", "sans-serif")
-	            .attr("font-size", "18px")
-	            .attr("fill", "red");
+	            .attr("font-size", "14px")
+	            .attr("fill", "#A0A092");
+
+	            var bar1 = svgCanvas.append('rect')
+	            			  .style("fill", "steelblue")
+	            			  .attr("width", 10)
+	            			  .attr('height', previousYear)
+	            			  .attr('x', 15)
+	            			  .attr('y', 0);
+
+	            var bar2 = svgCanvas.append('rect')
+	            			  .style("fill", "red")
+	            			  .attr("width", 10)
+	            			  .attr('height', currentYear)
+	            			  .attr('x', 0)
+	            			  .attr('y', 0);
 					
-					var bar = svg.selectAll('rect')
-					          .data(scope.data)
-					          .enter()
-					          .append('rect')
-					          .style("fill", "steelblue")
-					          .attr('width', 0);
+					// var bar2 = svgCanvas.selectAll('rect')
+					//           .data(scope.data)
+					//           .enter()
+					//           .append('rect')
+					//           .style("fill", "steelblue")
+					//           .attr('height', 0);
 					
-					    bar.transition()
-          				 .duration(1000)
-					    	 .attr('width', y)
-					       .attr('height', barHeight)
-					       .attr("y", function(d) { return y(d)-3; })
-					       .attr("x", barHeight / 2);
+					//     bar.transition()
+     //      				 .duration(1000)
+					//     	 .attr('width', y)
+					//        .attr('height', previousYear)
+					//        .attr("y", 50)
+					//        .attr("x", 30);
 					       
 							 
 

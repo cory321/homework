@@ -145,5 +145,8 @@ nav ul li {
 	margin:0;
 }
 
+div[d3-bars] { 
+	display: inline;
+}
 
 
