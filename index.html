@@ -48,20 +48,23 @@
 		</header>
 
 		<section class="container" ng-controller="programsCtrl">
-		<div d3-bars month="Jan" previousYear="15" currentYear="35"></div>
-		<div d3-bars month="Feb" previousYear="25" currentYear="45"></div>
-		<div d3-bars month="Mar" previousYear="30" currentYear="40"></div>
-		<div d3-bars month="Apr" previousYear="10" currentYear="20"></div>
-		<div d3-bars month="May" previousYear="35" currentYear="55"></div>
-		<div d3-bars month="Jun" previousYear="40" currentYear="65"></div>
-		<div d3-bars month="Jul" previousYear="50" currentYear="75"></div>
-			<div class="row">
-				<div class="col-md-2">
-					<button id="newProgramBtn" class="btn btn-success"><span class="glyphicon glyphicon-plus grow" aria-hidden="true"></span>New Program</button>
+				<div class="row">
+					<div class="col-md-2">
+						<button id="newProgramBtn" class="btn btn-success"><span class="glyphicon glyphicon-plus grow" aria-hidden="true"></span>New Program</button>
+					</div>
 				</div>
+				<div class="row">
 				<div class="col-md-3" ng-repeat="program in programs">
 					<div class="card">
 						<h1>{{program.Name}}</h1>
+						<div d3-bars month="Jan" previousYear="15" currentYear="35"></div>
+						<div d3-bars month="Feb" previousYear="25" currentYear="45"></div>
+						<div d3-bars month="Mar" previousYear="30" currentYear="40"></div>
+						<div d3-bars month="Apr" previousYear="10" currentYear="20"></div>
+						<div d3-bars month="May" previousYear="35" currentYear="55"></div>
+						<div d3-bars month="Jun" previousYear="40" currentYear="65"></div>
+						<div d3-bars month="Jul" previousYear="50" currentYear="75"></div>
+
 						<!-- Sales Graph -->
 						<!-- Sales Data -->
 						<a href="#">more</a>

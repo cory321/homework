@@ -41,44 +41,61 @@
 
 				d3Service.d3().then(function(d3) {
 					var month = attrs.month || "Month",
-						 previousYear = parseInt(attrs.previousyear) || 10,
+						 previousYear = attrs.previousyear || 10,
 					    currentYear = attrs.currentyear || 10;
-					    console.log(attrs);
 
-				// scope.data = [previousYear, currentYear];
+				   var chartWidth = 25;
+				   var chartHeight = 110;
 
-					// var height = 80;
+				   var yScale = d3.scale.linear()
+	               .domain([0, 100])
+	               .range([0, chartHeight]);
 
-					// var y = d3.scale.linear()
-					//     .domain([0, d3.max(scope.data)])
-					//     .range([0, height]);
 
 					var svgCanvas = d3.select(ele[0])
 					  				.append('svg')
-					            .style('width', '50')
-					            .style('height', '100');
+					            .style('width', chartWidth)
+					            .style('height', chartHeight);
 
 	            svgCanvas.append("text")
 	            .text(month)
-	            .attr("x", 25)
-	            .attr("y", 25)
+	            .attr("x", 0)
+	            .attr("y", 100)
 	            .attr("font-family", "sans-serif")
 	            .attr("font-size", "14px")
 	            .attr("fill", "#A0A092");
-
+	      
 	            var bar1 = svgCanvas.append('rect')
-	            			  .style("fill", "steelblue")
-	            			  .attr("width", 10)
-	            			  .attr('height', previousYear)
-	            			  .attr('x', 15)
-	            			  .attr('y', 0);
+	            			  .style("fill", "#CCBDDC")
+	            			  .attr("width", 5)
+	            			  .attr("height", 0)
+	            			  .attr('x', 8)
+	            			  .attr("y", function(d) {
+	            			      return chartHeight - yScale(previousYear) - 25;  //Height minus data value
+	            			  });
 
 	            var bar2 = svgCanvas.append('rect')
-	            			  .style("fill", "red")
-	            			  .attr("width", 10)
-	            			  .attr('height', currentYear)
+	            			  .style("fill", "#B7D7BA")
+	            			  .attr("width", 5)
+	            			  .attr("height", 0)
 	            			  .attr('x', 0)
-	            			  .attr('y', 0);
+	            			  .attr("y", function() {
+	            			      return chartHeight - yScale(currentYear) - 25;  //Height minus data value
+	            			  });
+	            			  
+
+	            bar1.transition()
+          				 .duration(1000)
+          				 .attr('height', function(d) {
+    				             return yScale(previousYear);
+    				           });
+					    	 // .attr('height', previousYear);
+
+					bar2.transition()
+          				 .duration(1000)
+					    	 .attr('height', function(d) {
+    				             return yScale(currentYear);
+    				           });
 					
 					// var bar2 = svgCanvas.selectAll('rect')
 					//           .data(scope.data)

@@ -149,4 +149,8 @@ div[d3-bars] {
 	display: inline;
 }
 
+.bar {
+    fill: none;
+    pointer-events: all;
+}
 
