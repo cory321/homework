@@ -10,6 +10,10 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/controllers.js"></script>
+		<script src="js/directives.js"></script>
+		<script src="js/services.js"></script>
 	</head>
 
 	<body>
@@ -47,9 +51,6 @@
 		</header>
 
 		<section class="container" ng-controller="programsCtrl">
-		<div ng-repeat="month in months">
-			{{month}}
-		</div>
 				<div class="row">
 					<div class="col-md-2">
 						<button id="newProgramBtn" class="btn btn-success"><span class="glyphicon glyphicon-plus grow" aria-hidden="true"></span>New Program</button>
@@ -95,10 +96,6 @@
 				</div>				
 			</div>		
 		</section>
-		<script src="js/app.js"></script>
-		<script src="js/controllers.js"></script>
-		<script src="js/directives.js"></script>
-		<script src="js/services.js"></script>
 </body>
 
 </html>

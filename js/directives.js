@@ -1,5 +1,7 @@
+angular.module("urbanYogaApp")
 
-app.directive('d3Bars', ['d3Service', function(d3Service){
+.directive('d3Bars', ['d3Service', function(d3Service){
+	
 	return {
 		restrict: 'EA',
 		scope: {},

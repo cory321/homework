@@ -1,5 +1,6 @@
+angular.module("urbanYogaApp")
 
-app.controller("programsCtrl", function($scope, $http) {
+.controller("programsCtrl", function($scope, $http) {
     $http.get('https://api.myjson.com/bins/5bdb3').then(function(response){
     	$scope.programs = response.data;
 
