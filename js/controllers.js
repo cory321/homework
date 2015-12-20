@@ -4,7 +4,9 @@ angular.module("urbanYogaApp")
     $http.get('https://api.myjson.com/bins/5bdb3').then(function(response){
     	$scope.programs = response.data;
 
-    	var monthsArray = [];
+        
+    	
+        var monthsArray = [];
 
     	var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
     	var curYear, prevYear;
