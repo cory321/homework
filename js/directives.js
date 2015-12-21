@@ -11,8 +11,7 @@ angular.module("urbanYogaApp")
 
 		d3Service.d3().then(function(d3) {
 			
-			var months = "Jan Feb Mar Apr May Jun Jul",
-				numMonths = 7;
+			var months = "Jan Feb Mar Apr May Jun Jul";
 
 			var previousYear = JSON.parse(attrs.previousyear);
 			var currentYear = JSON.parse(attrs.currentyear);
@@ -37,51 +36,57 @@ angular.module("urbanYogaApp")
 						.attr("font-size", "14px")
 						.attr("fill", "#A0A092");
 
-				canvas.selectAll(".bar1")
-						   .data(previousYear)
-						   .enter()
-						   .append("rect")
-						   .attr("class", "bar1")
-						   .attr("x", function(d, i) {
-						       return i * 28;
-						   })
-						   .attr("y", function(d) {
-						       return canvasHeight - dataToBarSize(d) - 20;
-						   })
-						   .attr("width", 6)
-						   .attr("height", function(d) {
-						       return dataToBarSize(d);
-						   })
-						   .style("fill", "#CCBDDC");
+			var bar1 = canvas.selectAll(".bar1")
+					   .data(previousYear)
+					   .enter()
+					   .append("rect")
+					   .attr("class", "bar1")
+					   .attr("x", function(d, i) {
+					       return i * 28;
+					   })
+					   .attr("y", function(d) {
+					       return canvasHeight - 20;
+					   })
+					   .attr("width", 6)
+					   .attr("height", function(d) {
+					       return dataToBarSize(d) - dataToBarSize(d);
+					   })
+					   .style("fill", "#CCBDDC");
 
-				canvas.selectAll(".bar2")
-						   .data(currentYear)
-						   .enter()
-						   .append("rect")
-						   .attr("class", "bar2")
-						   .attr("x", function(d, i) {
-						       return i * 28 + 8;
-						   })
-						   .attr("y", function(d) {
-						       return canvasHeight - dataToBarSize(d) - 20;
-						   })
-						   .attr("width", 6)
-						   .attr("height", function(d) {
-						       return dataToBarSize(d);
-						   })
-						   .style("fill", "#B7D7BA");
+			var bar2 = canvas.selectAll(".bar2")
+					   .data(currentYear)
+					   .enter()
+					   .append("rect")
+					   .attr("class", "bar2")
+					   .attr("x", function(d, i) {
+					       return i * 28 + 8;
+					   })
+					   .attr("y", function(d) {
+					       return canvasHeight - 20;
+					   })
+					   .attr("width", 6)
+					   .attr("height", function(d) {
+					       return dataToBarSize(d) - dataToBarSize(d);
+					   })
+					   .style("fill", "#B7D7BA");
     
-   //          bar1.transition()
-			// 			.duration(1000)
-			// 			.attr('height', function(d) {
-			// 				return yScale(previousYear);
-			// 			});
+            		bar1.transition()
+						.duration(1000)
+					  	.attr("y", function(d) {
+							return canvasHeight - dataToBarSize(d) - 20;
+					    })
+						.attr("height", function(d) {
+						       return dataToBarSize(d);
+						});
 
-			// bar2.transition()
-   //    				 .duration(1000)
-			//     	 .attr('height', function(d) {
-			//              return yScale(currentYear);
-			//          });
+					bar2.transition()
+						.duration(1000)
+						.attr("y", function(d) {
+							return canvasHeight - dataToBarSize(d) - 20;
+					    })
+						.attr("height", function(d) {
+						       return dataToBarSize(d);
+						});
 			});
 		}
 	};

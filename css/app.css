@@ -1,3 +1,9 @@
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
+
 header {
 	margin-bottom: 20px;
 	padding: 0;
@@ -145,12 +151,20 @@ nav ul li {
 	margin:0;
 }
 
+.card small {
+	color: #999;
+}
+
 div[d3-bars] { 
 	display: inline;
 }
 
-.bar {
-    fill: none;
-    pointer-events: all;
+.dataRow {
+	margin-top:30px;
+	color: #66625e;
+}
+
+.dataRow thead {
+	color: #b5afa8;
 }
 
