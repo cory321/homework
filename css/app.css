@@ -163,12 +163,26 @@ div[d3-bars] {
 	display: inline;
 }
 
-.dataRow {
+.pricingOptionsTable {
+	font-size: 0.7em;
+}
+
+.pricingOptionsTable>tbody>tr>td {
+	line-height: 2.2em;
+	padding: 0;
+	border:0;
+}
+
+.pricingOptionsTable>thead>tr>th {
+	padding: 1em 0;
+}
+
+.programsTable {
 	margin-top:30px;
 	color: #66625e;
 }
 
-.dataRow thead {
+.programsTable thead {
 	color: #b5afa8;
 }
 

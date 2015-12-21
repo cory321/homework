@@ -4,11 +4,11 @@
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <title>Urban Yoga</title>
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	    <link rel="stylesheet" href="css/app.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="css/app.css">
 		<script src="js/app.js"></script>
 		<script src="js/controllers.js"></script>
 		<script src="js/directives.js"></script>
@@ -59,20 +59,33 @@
 							<h1>{{program.Name}}</h1>
 							<small>Sales by Month</small>
 							<d3-bars previousYear="{{program.Sales.PreviousYear}}" currentYear="{{program.Sales.CurrentYear}}"></d3-bars>
-							<a role="button" data-toggle="collapse" href="#{{program.ProgramID}}" aria-expanded="false" aria-controls="{{program.ProgramID}}">more</a>
-							<div class="collapse" id="{{program.ProgramID}}">
-							  <div class="well">
-							    ...
-							  </div>
+							<a role="button" data-toggle="collapse" href="#p_id_{{program.ProgramID}}" aria-expanded="false" aria-controls="p_id_{{program.ProgramID}}">more</a>
+							<div class="collapse" id="p_id_{{program.ProgramID}}">
+								<table class="pricingOptionsTable table">
+									<thead>
+										<tr>
+											<th>Price Name</th>
+											<th>Current</th>
+											<th>1-Year</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="pricingOption in pricingOptions">
+											<td ng-if-start="pricingOption.ProgramID == program.ProgramID">{{pricingOption.Name}}</td>
+											<td>{{pricingOption.Sales}}</td>
+											<td ng-if-end><img src="/assets/spark_line.png" alt="spark line"></td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
-					<div class="clearfix" ng-if="$index%3==2"></div>
+					<div class="clearfix" ng-if="$index%3 == 2"></div>
 					<div ng-repeat-end=""></div>
 				</div>
-				<div class="row dataRow">
+				<div class="row">
 					<div class="col-md-12">
-						<table class="table">
+						<table class="table programsTable">
 							<thead>
 								<tr>
 									<th>All Programs</th>
