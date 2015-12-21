@@ -137,6 +137,10 @@ nav ul li {
 #newProgramBtn .grow { transition: all .2s; }
 #newProgramBtn .grow:hover { transform: scale(1.25); }
 
+#newProgramBtn:focus {
+	outline:0;
+}
+
 
 .card {
 	background-color: #FFF;
@@ -167,4 +171,5 @@ div[d3-bars] {
 .dataRow thead {
 	color: #b5afa8;
 }
+
 
