@@ -6,13 +6,15 @@
 	    <title>Urban Yoga</title>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	    <link rel="stylesheet" href="css/app.css">
 		<script src="js/app.js"></script>
 		<script src="js/controllers.js"></script>
 		<script src="js/directives.js"></script>
 		<script src="js/services.js"></script>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-multiselect.css">
+	    <link rel="stylesheet" href="css/app.css">
 	</head>
 	<body>
 		<header class="container-fluid">
@@ -131,21 +133,52 @@
 
 		<!-- New Program Modal -->
 		<div class="modal fade" id="addNewProgram" tabindex="-1" role="dialog" aria-labelledby="addNewProgramLabel">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="addNewProgramLabel">Add a New Program</h4>
-		      </div>
-		      <div class="modal-body">
-		        ...
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-primary">Save changes</button>
-		      </div>
-		    </div>
-		  </div>
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="addNewProgramLabel"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Add a New Program</h4>
+					</div>
+					<div class="modal-body">
+						<form action="#">
+							<label for="programType">Program Type</label>
+							<div class="form-group">
+								<label class="radio-inline"><input type="radio" name="programType">Count Series</label>
+								<label class="radio-inline"><input type="radio" name="programType">Time Series</label>
+								<label class="radio-inline"><input type="radio" name="programType">Membership</label>
+							</div>
+							<div class="form-group">
+								<label for="programName">Program Name</label>
+								<input type="text" class="form-control" id="programName">
+							</div>
+							<div class="form-group">
+								<label for="defaultCapacity">Default Capacity</label>
+								<input type="text" class="form-control" id="defaultCapacity">
+							</div>
+							<div class="form-group">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"> Allow online scheduling
+									</label>
+								</div>
+							</div>
+							<label for="modalProgramTabs">Tabs this program is on</label>
+							<select id="modalProgramTabs" multiple="multiple">
+							    <option value="classes">Classes</option>
+							    <option value="appointments">Appointments</option>
+							    <option value="workshops">Workshops</option>
+							    <option value="outside">Outside</option>
+							    <option value="inside">Inside</option>
+							    <option value="gym">Gym</option>
+							</select>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
