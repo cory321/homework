@@ -56,10 +56,32 @@
 				<div class="row">
 					<div class="col-md-4" ng-repeat-start="program in programs">
 						<div class="card">
+
+						<div class="row">
 							<h1>{{program.Name}}</h1>
 							<small>Sales by Month</small>
 							<d3-bars previousYear="{{program.Sales.PreviousYear}}" currentYear="{{program.Sales.CurrentYear}}"></d3-bars>
+						</div>
+
+						<table class="totalSalesTable">
+							<thead>
+								<tr>
+									<th>Total Monthly</th>
+									<th>Current</th>
+									<th>1-Year</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Sales</td>
+									<td>{{program.TotalMonthlySales | currency}}</td>
+									<td><img src="/assets/spark_line_2.png" alt="spark line"></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="row row2">
 							<a role="button" data-toggle="collapse" href="#p_id_{{program.ProgramID}}" aria-expanded="false" aria-controls="p_id_{{program.ProgramID}}">more</a>
+							
 							<div class="collapse" id="p_id_{{program.ProgramID}}">
 								<table class="pricingOptionsTable table">
 									<thead>
@@ -72,12 +94,13 @@
 									<tbody>
 										<tr ng-repeat="pricingOption in pricingOptions">
 											<td ng-if-start="pricingOption.ProgramID == program.ProgramID">{{pricingOption.Name}}</td>
-											<td>{{pricingOption.Sales}}</td>
+											<td>{{pricingOption.Sales | currency}}</td>
 											<td ng-if-end><img src="/assets/spark_line.png" alt="spark line"></td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
+						</div>
 						</div>
 					</div>
 					<div class="clearfix" ng-if="$index%3 == 2"></div>

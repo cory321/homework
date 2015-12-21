@@ -1,0 +1,8 @@
+.totalSalesTable {
+	padding: 6px;
+	margin: 0 -10px;
+	background: #fbfbf6;
+}
+.totalSalesTable div:first-child {
+	font-size: 1.5em;
+}

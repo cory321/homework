@@ -141,13 +141,13 @@ nav ul li {
 	outline:0;
 }
 
-
 .card {
 	background-color: #FFF;
 	border-radius:6px;
 	border: 1px solid #DDD;
 	margin: 5px 0;
-	padding: 10px;}
+	padding: 0;
+}
 
 .card h1 {
 	font-size:1.5em;
@@ -159,8 +159,35 @@ nav ul li {
 	color: #999;
 }
 
+.card .row {
+	padding: 15px 35px;
+}
+
+.card .row2 {
+	padding: 10px 20px;
+}
+
 div[d3-bars] { 
 	display: inline;
+}
+
+.totalSalesTable {
+	font-size: 0.7em;
+	width:100%;
+	background: #FBFBF6;
+	margin:0;
+	border-collapse: separate;
+    border-spacing: 8px 0px;
+	border-top: 1px solid #E7E3D1;
+	border-bottom: 1px solid #E7E3D1;
+}
+
+.totalSalesTable>tbody {
+	font-size: 1.3em;
+}
+
+.totalSalesTable>tbody>tr>td:first-child {
+	color: #999582;
 }
 
 .pricingOptionsTable {
@@ -170,12 +197,22 @@ div[d3-bars] {
 .pricingOptionsTable>tbody>tr>td {
 	line-height: 2.2em;
 	padding: 0;
+	border-color: #EEE;
+}
+
+.totalSalesTable>thead>tr>th,
+.pricingOptionsTable>thead>tr>th {
+	padding: 1em 0 0.5em 0;
+	text-align: center;
+	color:#A0A092;
 	border:0;
 }
 
-.pricingOptionsTable>thead>tr>th {
-	padding: 1em 0;
+.totalSalesTable>thead>tr>th:first-child,
+.pricingOptionsTable>thead>tr>th:first-child {
+	text-align: left;
 }
+
 
 .programsTable {
 	margin-top:30px;
