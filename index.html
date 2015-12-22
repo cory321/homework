@@ -49,6 +49,7 @@
 				</div>
 			</div>
 		</header>
+
 		<section class="container" ng-controller="programsCtrl">
 			<div class="col-xs-12 col-sm-12 col-md-2">
 				<button id="newProgramBtn" class="btn btn-success" data-toggle="modal" data-target="#addNewProgram"><span class="glyphicon glyphicon-plus grow" aria-hidden="true"></span>New Program</button>
@@ -56,6 +57,12 @@
 
 			<div class="col-xs-12 col-sm-12 col-md-10">
 				<div class="row">
+				<div class="well well-sm" ng-if="pricingOptions.dataLoading">
+					<img src="/assets/squares.gif" alt="loading icon">Populating Data from Programs API...
+				</div>
+				<div class="well well-sm" ng-if="programsData.dataLoading">
+					<img src="/assets/squares.gif" alt="loading icon">Populating Data from Pricing Options API...
+				</div>
 					<div class="col-md-4" ng-repeat-start="program in programs">
 						<div class="card">
 						<button class="editBtn"></button>
