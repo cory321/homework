@@ -36,11 +36,11 @@ angular.module("urbanYogaApp")
 						.attr("font-size", "14px")
 						.attr("fill", "#A0A092");
 
-			var bar1 = canvas.selectAll(".bar1")
+			var purpleBar = canvas.selectAll(".purpleBar")
 					   .data(previousYear)
 					   .enter()
 					   .append("rect")
-					   .attr("class", "bar1")
+					   .attr("class", "purpleBar")
 					   .attr("x", function(d, i) {
 					       return i * 28;
 					   })
@@ -53,11 +53,11 @@ angular.module("urbanYogaApp")
 					   })
 					   .style("fill", "#CCBDDC");
 
-			var bar2 = canvas.selectAll(".bar2")
+			var greenBar = canvas.selectAll(".greenBar")
 					   .data(currentYear)
 					   .enter()
 					   .append("rect")
-					   .attr("class", "bar2")
+					   .attr("class", "greenBar")
 					   .attr("x", function(d, i) {
 					       return i * 28 + 8;
 					   })
@@ -70,7 +70,7 @@ angular.module("urbanYogaApp")
 					   })
 					   .style("fill", "#B7D7BA");
     
-            		bar1.transition()
+            		purpleBar.transition()
 						.duration(1000)
 					  	.attr("y", function(d) {
 							return canvasHeight - dataToBarSize(d) - 20;
@@ -79,7 +79,7 @@ angular.module("urbanYogaApp")
 						       return dataToBarSize(d);
 						});
 
-					bar2.transition()
+					greenBar.transition()
 						.duration(1000)
 						.attr("y", function(d) {
 							return canvasHeight - dataToBarSize(d) - 20;
