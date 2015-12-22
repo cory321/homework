@@ -14,6 +14,11 @@ body {
 	background: #F4F4EE;
 }
 
+svg {
+	width: 200px;
+	height: 100px;
+}
+
 .container-fluid {
 	padding: 0;
 }
